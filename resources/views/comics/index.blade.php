@@ -11,6 +11,8 @@
                     <img src="{{$comic->img_url}}" width="200" alt="">
                     <h3 class="my-3">{{$comic->title}}</h3>
                     <a href="{{ route('comics.show', ['comic'=> $comic->id])}}">Read more</a>
+                    <br>
+                    <a href="{{ route('comics.edit', $comic->id)}}">Modify comic</a>
                 </div>
             @endforeach
             

@@ -2,31 +2,32 @@
 
 @section('content')
 
-    <h1 class="text-center my-5">Insert your comic's information below</h1>
+    <h1 class="text-center my-5">Change {{ $comic->title }}</h1>
     
     <div class="card-body">
-        <form action="{{ route('comics.store') }}" method="POST">
+        <form action="{{ route('comics.index', ['id'=> $comic->id]) }}" method="POST">
+            @method('PATCH')
             @csrf
             <div class="row">
 
                 <div class="col-6 mb-4">
                     <label for="title" class="form-label">Title:</label>
-                    <input class="form-control" type="text" id="title" name="title" placeholder="Insert your favorite comic's title" required>
+                    <input class="form-control" value="{{ $comic->title }}" type="text" id="title" name="title" placeholder="ciaooooo" required>
                 </div>
 
                 <div class="col-6 mb-4">
                     <label for="img_url" class="form-label">Image:</label>
-                    <input class="form-control" type="text" id="img_url" name="img_url" placeholder="Insert the cover image url">
+                    <input class="form-control" value="{{ $comic->img_url }}" type="text" id="img_url" name="img_url" placeholder="Insert the cover image url">
                 </div>
 
                 <div class="col-6 mb-4">
                     <label for="release_date" class="form-label">Release date:</label>
-                    <input class="form-control" type="text" id="release_date" name="release_date" placeholder="Insert the first comic's release date" required>
+                    <input class="form-control" value="{{ $comic->release_date }}" type="text" id="release_date" name="release_date" placeholder="Insert the first comic's release date" required>
                 </div>
 
                 <div class="col-6 mb-4">
                     <label for="food_type" class="form-label">Original language:</label>
-                    <input class="form-control" type="text" id="original_language" name="original_language" placeholder="Insert the original language of the comic" required>
+                    <input class="form-control" value="{{ $comic->original_language }}" type="text" id="original_language" name="original_language" placeholder="Insert the original language of the comic" required>
                 </div>
 
                 <div class="d-flex justify-content-between mt-3">
