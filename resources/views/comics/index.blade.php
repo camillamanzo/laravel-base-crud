@@ -2,16 +2,18 @@
 @extends('layouts.main')
 
 @section('content')
-    <h1>Best Comics:</h1>
+    <h1 class="my-5 text-center">Best Comics:</h1>
+    <div class="container">
+        <div class="row justify-content-center">
 
-    @foreach ($comics as $comic )
-        <div>
-            <img src="{{$comic->img_url}}" width="200" alt="">
-            <h3>{{$comic->title}}</h3>
-            <p>{{$comic->release_date}}</p>
-            <a href="{{ route('comics.show', ['comic'=> $comic->id])}}">Read more</a>
+            @foreach ($comics as $comic )
+                <div class="col-3 text-center">
+                    <img src="{{$comic->img_url}}" width="200" alt="">
+                    <h3 class="my-3">{{$comic->title}}</h3>
+                    <a href="{{ route('comics.show', ['comic'=> $comic->id])}}">Read more</a>
+                </div>
+            @endforeach
 
         </div>
-        
-    @endforeach
+    </div>
 @endsection
