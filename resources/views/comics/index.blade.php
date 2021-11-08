@@ -13,7 +13,10 @@
                     <a href="{{ route('comics.show', ['comic'=> $comic->id])}}">Read more</a>
                 </div>
             @endforeach
-
+            
+            <a class="my-5 text-center nav-link @if (request()->routeIs('comics.create')) active @endif" href="{{ route('comics.create') }}">
+                <button class="btn btn-primary px-3">Add a comic</button>
+            </a>
         </div>
     </div>
 @endsection
