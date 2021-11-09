@@ -13,5 +13,9 @@
        @yield('content')
     </main>
     
+    @yield('script-section')
+    
+    <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>

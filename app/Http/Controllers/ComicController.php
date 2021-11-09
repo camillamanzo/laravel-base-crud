@@ -92,6 +92,6 @@ class ComicController extends Controller
     {
         $data = $request->all();
         $comic->delete($data);
-        return redirect()->route('comics.index', $comic)->with('succes', 'Comic has been removed');
+        return redirect()->route('comics.index', $comic)->with('delete', 'Comic has been removed');
     }
 }
