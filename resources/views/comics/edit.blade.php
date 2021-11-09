@@ -5,7 +5,7 @@
     <h1 class="text-center my-5">Change {{ $comic->title }}</h1>
     
     <div class="card-body">
-        <form action="{{ route('comics.index', ['id'=> $comic->id]) }}" method="POST">
+        <form action="{{ route('comics.edit', ['id'=> $comic->id]) }}" method="POST">
             @method('PATCH')
             @csrf
             <div class="row">
