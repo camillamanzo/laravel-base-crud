@@ -11,6 +11,7 @@
                 <h3 class="my-3">Title: {{ $comic->title }}</h3>
                 <p>Original language: {{ $comic->original_language }}</p>
                 <p>First comic's release date: {{ $comic->release_date }}</p>
+                <p>description: {{ $comic->description }}</p>
             </div>
         
             <a href="{{ route('comics.index')}}">Back to comics</a>

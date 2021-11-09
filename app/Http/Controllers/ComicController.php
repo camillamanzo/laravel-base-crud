@@ -88,8 +88,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+        $comic->delete($data);
+        return redirect()->route('comics.index', $comic)->with('succes', 'Comic has been removed');
     }
 }

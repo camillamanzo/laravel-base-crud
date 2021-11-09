@@ -26,8 +26,13 @@
                 </div>
 
                 <div class="col-6 mb-4">
-                    <label for="food_type" class="form-label">Original language:</label>
+                    <label for="original_language" class="form-label">Original language:</label>
                     <input class="form-control" value="{{ $comic->original_language }}" type="text" id="original_language" name="original_language" placeholder="Insert the original language of the comic" required>
+                </div>
+
+                <div class="col-6 mb-4">
+                    <label for="description" class="form-label">Description:</label>
+                    <input class="form-control" value="{{ $comic->description }}" type="text" id="description" name="description" placeholder="Insert the description" required>
                 </div>
 
                 <div class="d-flex justify-content-between mt-3">
