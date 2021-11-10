@@ -40,14 +40,14 @@
 
     <script>
         const deleteItems = document.querySelectorAll('.delete-item');
+        console.log(deleteItems);
         
         deleteItems.forEach(element => {
-            form.addEventListener('submit', function(event){
+            element.addEventListener('submit', function(event){
                 event.preventDefault(); //blocca la funzionalità standard
-                const id = form.getAttribute("data-comic-id");
-                const title = form.getAttribute("data-comic-title");
+                const title = element.getAttribute("data-comic-title");
                 const confirm = window.confirm(`Are you sure you want to delete ${title}?`);
-                if (confirm) this.submit();
+                if (confirm) element.submit();
             })
         });
     
